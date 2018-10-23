@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Description: TODO: please add description here ¥Î°j°é²£¥Í©Ò¦³ªºµP¦A©ñ¶iArrayList
- * °j°é²Ä¤@¼h:¦@¦³´X°ÆµPdeck °j°é²Ä¤G¼h:¤À°tªá¦âsuit °j°é²Ä¤T¼h:¤À°tÂI¼Ærank
+ * Description: TODO: please add description here ç”¨è¿´åœˆç”¢ç”Ÿæ‰€æœ‰çš„ç‰Œå†æ”¾é€²ArrayList
+ * è¿´åœˆç¬¬ä¸€å±¤:å…±æœ‰å¹¾å‰¯ç‰Œdeck è¿´åœˆç¬¬äºŒå±¤:åˆ†é…èŠ±è‰²suit è¿´åœˆç¬¬ä¸‰å±¤:åˆ†é…é»æ•¸rank
  */
 public class Deck {
-	private ArrayList<Card> cards;// ²{¦bµP­±¤WªºµP
-	private ArrayList<Card> usedCards;// ¦sµo¹LªºµP
-	public int nUsed;// °O¿ıµo¹L´X±iµP
+	private ArrayList<Card> cards;// ç¾åœ¨ç‰Œé¢ä¸Šçš„ç‰Œ
+	private ArrayList<Card> usedCards;// å­˜ç™¼éçš„ç‰Œ
+	public int nUsed;// è¨˜éŒ„ç™¼éå¹¾å¼µç‰Œ
 
 	// TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck) {
@@ -20,12 +20,12 @@ public class Deck {
 		// cards.add(card);
 		// Sample code end
 
-		// Á`¦@¦³´X°ÆµP´N²£¥Í
+		// ç¸½å…±æœ‰å¹¾å‰¯ç‰Œå°±ç”¢ç”Ÿ
 		for (int i = 0; i < nDeck; i++) {
-			// ¥ş³¡ªá¦â §ï¥Îenum
-			for (Card.Suit s : Card.Suit.values()) {// §ï¦¨¦CÁ|«áªº
+			// å…¨éƒ¨èŠ±è‰² æ”¹ç”¨enum
+			for (Card.Suit s : Card.Suit.values()) {// æ”¹æˆåˆ—èˆ‰å¾Œçš„
 				
-				// ¥ş³¡ÂI¼Æ(1~13)
+				// å…¨éƒ¨é»æ•¸(1~13)
 				for (int r = 1; r < 14; r++) {
 					Card card = new Card(s, r);
 					cards.add(card);
@@ -36,39 +36,39 @@ public class Deck {
 		shuffle();
 	}
 
-	// §@·~¤T ¡G¬~µP
+	// ä½œæ¥­ä¸‰ ï¼šæ´—ç‰Œ
 	public void shuffle() {
 		
 		Random rnd = new Random();
-		// i¬O²{¦b­n³B²zªºµP
+		// iæ˜¯ç¾åœ¨è¦è™•ç†çš„ç‰Œ
 		for (int i = 0; i < cards.size(); i++) {
-			// j¬OÀH¾÷¦b©Ò¦³cards¤¤ªº¤@±iµP
+			// jæ˜¯éš¨æ©Ÿåœ¨æ‰€æœ‰cardsä¸­çš„ä¸€å¼µç‰Œ
 			int j = rnd.nextInt(cards.size());
-			// §â²Äi±i¥ı°O¿ı°_¨Ó
+			// æŠŠç¬¬iå¼µå…ˆè¨˜éŒ„èµ·ä¾†
 			Card tmp = cards.get(i);
-			// ²Äj±i®³¨ì²Äi±iªº¦ì¸m
+			// ç¬¬jå¼µæ‹¿åˆ°ç¬¬iå¼µçš„ä½ç½®
 			cards.set(i, cards.get(j));
-			// ²Äi±i®³¨ì²Äj±iªº¦ì¸m
+			// ç¬¬iå¼µæ‹¿åˆ°ç¬¬jå¼µçš„ä½ç½®
 			cards.set(j, tmp);
 		}
 	}
 
-	// §@·~¤T¡AµoµP
+	// ä½œæ¥­ä¸‰ï¼Œç™¼ç‰Œ
 	public Card getOneCard() {
-		// ®³¥X¦b²Ä¤@­Ó¦ì¸mªºµP
+		// æ‹¿å‡ºåœ¨ç¬¬ä¸€å€‹ä½ç½®çš„ç‰Œ
 		Card c = cards.get(0);
-		// §â³o±iµP°O¿ı°_¨Ó
-		//usedCards.add(c);
-		// °O¿ı¦hµo¤F¤@±iµP
+		// æŠŠé€™å¼µç‰Œè¨˜éŒ„èµ·ä¾†
+		usedCards.add(c);
+		// è¨˜éŒ„å¤šç™¼äº†ä¸€å¼µç‰Œ
 		nUsed++;
-		// §â³o±iµP§R±¼
+		// æŠŠé€™å¼µç‰Œåˆªæ‰
 		cards.remove(c);
-		// ¦pªGµPµo§¹¤F
+		// å¦‚æœç‰Œç™¼å®Œäº†
 		if (cards.size() == 0) {
-			// ­«·s°õ¦æ¬~µPmethod
+			// é‡æ–°åŸ·è¡Œæ´—ç‰Œmethod
 			shuffle();
 		}
-		// ¦^¶Ç³o±iµP
+		// å›å‚³é€™å¼µç‰Œ
 		return c;
 	}
 
@@ -76,7 +76,7 @@ public class Deck {
 	public void printDeck() {
 		// Hint: print all items in ArrayList<Card> cards,
 		// TODO: please implement and reuse printCard method in Card class (5 points)
-		// ¦L¥XµP­±¤W©Ò¦³ªºµP
+		// å°å‡ºç‰Œé¢ä¸Šæ‰€æœ‰çš„ç‰Œ
 		for (Card i : cards)// for each
 		{
 			i.printCard();
