@@ -1,37 +1,29 @@
-# CGUIMOOP_HW3
+CGUIMOOP_HW3
+From HW2.java
+±NCard ©M Deck class¨ú¥X¡A¦s¦¨Card.java»PDeck.java¡A¨Ã³]¦¨public
+±NCard.java, Deck.java »PHW3.java©ñ¦b¦P¤@­Ó¸ê®Æ§¨¡A¦P¤@­ÓJAVA project
+Card.java
+Use enumerated type in Card class:
+Suit: Club, Diamond, Heart, Spade
+Add Method:
+­×§ïConstructor¡A³Ğ«Øª«¥ó®É¡A»İ­n¶ñ¤J°Ñ¼Æ(Suit s, int value)
+­×§ïpublic void printCard (); ½d¨Ò¡GSpade Ace
+¦]À³Suit­×§ï¡A­ì¦³getSuit(); ¤èªkªºreturn type ­n­×¥¿
+Deck.java
+Add new Filed:
 
+ArrayList usedCard;
+public int nUsed;
+Add new Method:
 
-## From HW2.java 
-
-- å°‡Card å’Œ Deck classå–å‡ºï¼Œå­˜æˆCard.javaèˆ‡Deck.javaï¼Œä¸¦è¨­æˆpublic
-- å°‡Card.java, Deck.java èˆ‡HW3.javaæ”¾åœ¨åŒä¸€å€‹è³‡æ–™å¤¾ï¼ŒåŒä¸€å€‹JAVA project
-
-## Card.java
-
-- Use enumerated type in Card class:
-    - Suit: Club, Diamond, Heart, Spade
-- Add Method:
-    - ä¿®æ”¹Constructorï¼Œå‰µå»ºç‰©ä»¶æ™‚ï¼Œéœ€è¦å¡«å…¥åƒæ•¸(Suit s, int value)
-    - ä¿®æ”¹public void printCard (); ç¯„ä¾‹ï¼šSpade Ace
-    - å› æ‡‰Suitä¿®æ”¹ï¼ŒåŸæœ‰getSuit(); æ–¹æ³•çš„return type è¦ä¿®æ­£
-
-
-## Deck.java
-- Add new Filed:
-    - ArrayList<Card> usedCard; 
-    - public int nUsed;
-
-- Add new Method: 
-    - public void shuffle() æ´—ç‰Œï¼Œæ„æŒ‡å…¨éƒ¨ç‰Œæ”¶å›ï¼ˆä¸ç®¡ç™¼å‡ºå»å¹¾å¼µï¼‰ï¼Œé‡æ–°æ´—ç‰Œ
-        - æç¤ºï¼šéš¨æ©Ÿå–ä¸€å¼µç‰Œç‰Œï¼Œæ”¾åˆ°æ–°çš„ä½ç½®
-        - Random rnd = new Random();    int j = rnd.nextInt(i + 1);
-        - é‡è¨­usedCard, nUsed
-    - public Card getOneCard() ç™¼ä¸€å¼µç‰Œå‡ºä¾†ï¼Œå›å‚³Card object
-        - è¦æª¢æŸ¥æ²’ç‰Œäº† (ç‰Œéƒ½ç™¼å®Œäº†) æ€éº¼è¾¦ï¼Ÿ shuffle() ï¼
-        - ç™¼å‡ºå»çš„ç‰Œç´€éŒ„åœ¨ArrayList<Card> usedCard
-        - ç™¼äº†å¹¾å¼µç‰Œï¼Ÿç´€éŒ„åœ¨public int nUsed;
-        - Deck constructor åœ¨æœ€å¾Œå‘¼å«shuffle() method
-    - å› æ‡‰Card çš„Constructorä¿®æ”¹ï¼Œæœ‰äº›Code è¦æ›´å‹•
-        - æç¤ºï¼š for (Card.Suit s : Card.Suit.values()){ }
-
-
+public void shuffle() ¬~µP¡A·N«ü¥ş³¡µP¦¬¦^¡]¤£ºŞµo¥X¥h´X±i¡^¡A­«·s¬~µP
+´£¥Ü¡GÀH¾÷¨ú¤@±iµPµP¡A©ñ¨ì·sªº¦ì¸m
+Random rnd = new Random(); int j = rnd.nextInt(i + 1);
+­«³]usedCard, nUsed
+public Card getOneCard() µo¤@±iµP¥X¨Ó¡A¦^¶ÇCard object
+­nÀË¬d¨SµP¤F (µP³£µo§¹¤F) «ç»ò¿ì¡H shuffle() ¡I
+µo¥X¥hªºµP¬ö¿ı¦bArrayList usedCard
+µo¤F´X±iµP¡H¬ö¿ı¦bpublic int nUsed;
+Deck constructor ¦b³Ì«á©I¥sshuffle() method
+¦]À³Card ªºConstructor­×§ï¡A¦³¨ÇCode ­n§ó°Ê
+´£¥Ü¡G for (Card.Suit s : Card.Suit.values()){ }

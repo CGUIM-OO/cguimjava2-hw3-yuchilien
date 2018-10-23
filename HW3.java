@@ -3,8 +3,15 @@ import java.util.HashMap;
 //import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
+ * @author TODO: please add student ID and name here B0444237 連昱棋
  * Try to write some comments for your codes (methods, 10 points)
+ * 現在是用enum來列舉花色
+ * 在Deck.java多加了兩個功能
+ * 1.發牌：每次發出在第一張那張牌，每發一張牌都記錄在usedCard
+ * 		 每發一張牌都用nUsed來記錄次數
+ * 		 發過之後就把那張牌從原本的cadrds ArrayList中刪除
+ * 		如果發現牌發光了，就執行洗牌
+ * 2.洗牌：依序把每張牌拿出再與隨機的某張牌交換位置
  */
 public class HW3 {
 	public static void main(String[] args) {
