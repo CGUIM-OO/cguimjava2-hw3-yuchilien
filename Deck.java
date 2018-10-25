@@ -8,11 +8,13 @@ import java.util.Random;
 public class Deck {
 	private ArrayList<Card> cards;// 現在牌面上的牌
 	private ArrayList<Card> usedCards;// 存發過的牌
+	
 	public int nUsed;// 記錄發過幾張牌
 
 	// TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck) {
 		cards = new ArrayList<Card>();
+		usedCards = new ArrayList<Card>();//usedCards初始化(不然會出錯，可是打了也是錯)QQQQQQQQQQQ
 		// 1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		// Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		// Sample code start
@@ -38,6 +40,18 @@ public class Deck {
 
 	// 作業三 ：洗牌
 	public void shuffle() {
+		// 如果牌有用過
+		if(usedCards.size() != 0)
+		{
+			// 把用過的牌加回去
+			for(Card c : usedCards)
+			{
+				cards.add(c);
+			}
+			// 把用過的牌清空
+			usedCards.clear();
+			nUsed = 0;
+		}
 		
 		Random rnd = new Random();
 		// i是現在要處理的牌
@@ -58,6 +72,7 @@ public class Deck {
 		// 拿出在第一個位置的牌
 		Card c = cards.get(0);
 		// 把這張牌記錄起來
+		
 		usedCards.add(c);
 		// 記錄多發了一張牌
 		nUsed++;
