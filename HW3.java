@@ -11,7 +11,8 @@ import java.util.HashMap;
  * 		 每發一張牌都用nUsed來記錄次數
  * 		 發過之後就把那張牌從原本的cadrds ArrayList中刪除
  * 		如果發現牌發光了，就執行洗牌
- * 2.洗牌：依序把每張牌拿出再與隨機的某張牌交換位置
+ * 2.洗牌：先判斷牌有沒有發出去過，有的話就放回去
+ * 		依序把每張牌拿出再與隨機的某張牌交換位置
  */
 public class HW3 {
 	public static void main(String[] args) {

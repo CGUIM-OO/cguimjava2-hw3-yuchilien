@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+
 /**
  * Description: TODO: please add description here 用迴圈產生所有的牌再放進ArrayList
  * 迴圈第一層:共有幾副牌deck 迴圈第二層:分配花色suit 迴圈第三層:分配點數rank

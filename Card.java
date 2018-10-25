@@ -78,3 +78,4 @@ public class Card {
 		return rank;
 	}
 }
+
